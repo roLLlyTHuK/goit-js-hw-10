@@ -7,10 +7,11 @@ const loader = document.querySelector(".loader");
 const error = document.querySelector(".error");
 const catInfo = document.querySelector(".cat-info");
 
+//! заповнюємо список
 function populateBreedsSelect(breeds) {
   breedSelect.innerHTML = breeds.map(breed => `<option value="${breed.id}">${breed.name}</option>`).join("");
 }
-
+//! картка кота
 function displayCatInfo(cat) {
     catInfo.innerHTML = `
     <img src="${cat[0].url}" alt="Cat" max-width="50%"/>
@@ -38,7 +39,6 @@ function hideLoader() {
 }
 
 function showError() {
-    // error.style.display = "block";
     Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
 }
 
@@ -49,9 +49,9 @@ breedSelect.addEventListener("change", event => {
   catInfo.innerHTML = "";
   error.style.display = "none";
 
-    fetchCatByBreed(selectedBreedId)
-        .then(displayCatInfo)
-        .catch(showError)
+fetchCatByBreed(selectedBreedId)
+    .then(displayCatInfo)
+    .catch(showError)
     .finally(hideLoader);
 });
 
