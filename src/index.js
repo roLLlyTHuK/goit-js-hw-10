@@ -46,7 +46,7 @@ function hideLoader() {
 function showError() {
     Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
 }
-
+//! не потрібно для slim selecta
 // breedSelect.addEventListener("change", event => {
 //   const selectedBreedId = event.target.value;
 
