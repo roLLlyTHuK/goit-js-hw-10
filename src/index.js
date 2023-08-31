@@ -68,7 +68,7 @@ fetchCatByBreed(selectedBreedId)
 
 fetchBreeds()
   .then(breeds => {
-    // Создаем SlimSelect для селекта
+  
     const slimSelect = new SlimSelect({
       select: breedSelect,
       data: breeds.map(breed => ({ value: breed.id, text: breed.name })),
