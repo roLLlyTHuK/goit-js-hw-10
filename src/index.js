@@ -47,18 +47,18 @@ function showError() {
     Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
 }
 
-breedSelect.addEventListener("change", event => {
-  const selectedBreedId = event.target.value;
+// breedSelect.addEventListener("change", event => {
+//   const selectedBreedId = event.target.value;
 
-  loader.style.display = "flex";
-  catInfo.innerHTML = "";
-  error.style.display = "none";
+//   loader.style.display = "flex";
+//   catInfo.innerHTML = "";
+//   error.style.display = "none";
 
-fetchCatByBreed(selectedBreedId)
-    .then(displayCatInfo)
-    .catch(showError)
-    .finally(hideLoader);
-});
+// fetchCatByBreed(selectedBreedId)
+//     .then(displayCatInfo)
+//     .catch(showError)
+//     .finally(hideLoader);
+// });
 
 //! без застосування slim-select
 // fetchBreeds()
