@@ -191,11 +191,14 @@
 }
 
 body {
-    /* margin: 0; */
     background: #f4f4f4;
-    overflow: hidden;
 }
-
+h2{
+    margin-top: 0;
+}
+img{
+    width: 100%;
+}
 body .loader {
     position: absolute;
     left: 50%;
