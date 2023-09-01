@@ -9,7 +9,7 @@ const loader = document.querySelector(".loader");
 const error = document.querySelector(".error");
 const catInfo = document.querySelector(".cat-info");
 
-
+hideError();
 
 //! заповнюємо список без застосування slim-select
 // function populateBreedsSelect(breeds) {
@@ -46,6 +46,10 @@ function hideLoader() {
 function showError() {
     Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
 }
+
+function hideError() { 
+  error.style.display = "none";
+}
 //! не потрібно для slim selecta
 // breedSelect.addEventListener("change", event => {
 //   const selectedBreedId = event.target.value;
@@ -60,7 +64,6 @@ function showError() {
 //     .finally(hideLoader);
 // });
 
-//! без застосування slim-select
 // fetchBreeds()
 //   .then(populateBreedsSelect)
 //   .catch(showError)
@@ -74,8 +77,13 @@ fetchBreeds()
       data: breeds.map(breed => ({ value: breed.id, text: breed.name })),
       settings: {
         alwaysOpen: false,
-        showSearch: false,
-              },
+        showSearch: true,
+        placeholderText: "Breed",
+        searchPlaceholder: "Find your favorite breed"
+      },
+      events: {
+      error: showError()
+    },
     });
 
     breedSelect.addEventListener("change", event => {
