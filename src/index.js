@@ -19,7 +19,7 @@ hideError();
 //! картка кота
 function displayCatInfo(cat) {
     catInfo.innerHTML = `
-    <img src="${cat[0].url}" alt="Cat" />
+    <img src="${cat[0].url}" alt="Cat" loading="lazy"/>
     <div class="text-box">
     <h2>${cat[0].breeds[0].name}</h2>
     <p>${cat[0].breeds[0].description}</p>
