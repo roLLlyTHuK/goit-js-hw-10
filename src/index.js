@@ -29,6 +29,7 @@ function displayCatInfo(cat) {
     const textBox = document.querySelector(`.text-box`);
     catInfo.style.display = "flex";
     catInfo.style.flexDirection = "row";
+catInfo.style.flexWrap ="wrap"
     catInfo.style.marginTop = "48px";
     catInfo.style.gap = "24px";
     catInfo.style.width = "95vw";
